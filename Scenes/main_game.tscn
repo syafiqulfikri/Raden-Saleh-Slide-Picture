@@ -1,0 +1,260 @@
+[gd_scene load_steps=10 format=3 uid="uid://35qvmbisg7a6"]
+
+[ext_resource type="Script" uid="uid://q583tawpild3" path="res://Scripts/main_game.gd" id="1_6j5ir"]
+[ext_resource type="Texture2D" uid="uid://ccv6ijx5wkpyj" path="res://Assets/Images/bg_final.png.png" id="2_6y7pd"]
+[ext_resource type="AudioStream" uid="uid://5nxvnssl4u1i" path="res://Assets/Audio/slide.wav" id="2_mgc0q"]
+[ext_resource type="FontFile" uid="uid://c5po530cld0ym" path="res://Assets/Fonts/Lato/Lato-Black.ttf" id="3_6y7pd"]
+[ext_resource type="AudioStream" uid="uid://njhf2bhjt2ua" path="res://Assets/Audio/win.wav" id="3_bb2iq"]
+[ext_resource type="FontFile" uid="uid://dblqgrkd1wjpp" path="res://Assets/Fonts/Crimson_Text/CrimsonText-Bold.ttf" id="4_6y7pd"]
+[ext_resource type="AudioStream" uid="uid://cwwv71p2o18yr" path="res://Assets/Audio/BgMusic.mp3" id="4_18r40"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx7mw"]
+font = ExtResource("3_6y7pd")
+font_size = 48
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.490196)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bb2iq"]
+font = ExtResource("4_6y7pd")
+font_size = 30
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_6j5ir")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.791999, 0.791999, 0.791999, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_6y7pd")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelJudul" type="Label" parent="CanvasLayer/MainMenu"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -204.0
+offset_right = 169.5
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SLIDE PUZZLE"
+label_settings = SubResource("LabelSettings_yx7mw")
+
+[node name="HomeMenu" type="VBoxContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -104.0
+offset_right = 125.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="BtnPlay" type="Button" parent="CanvasLayer/MainMenu/HomeMenu"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="BtnSettings" type="Button" parent="CanvasLayer/MainMenu/HomeMenu"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="BtnExit" type="Button" parent="CanvasLayer/MainMenu/HomeMenu"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[node name="LevelSelect" type="VBoxContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -104.0
+offset_right = 125.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="BtnLevel1" type="Button" parent="CanvasLayer/MainMenu/LevelSelect"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Level 1"
+
+[node name="BtnLevel2" type="Button" parent="CanvasLayer/MainMenu/LevelSelect"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Level 2"
+
+[node name="BtnLevel3" type="Button" parent="CanvasLayer/MainMenu/LevelSelect"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Level 3"
+
+[node name="BtnLevel4" type="Button" parent="CanvasLayer/MainMenu/LevelSelect"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Level 4"
+
+[node name="BtnBackLevel" type="Button" parent="CanvasLayer/MainMenu/LevelSelect"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -56.5
+offset_right = 70.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="LabelVolume" type="Label" parent="CanvasLayer/MainMenu/SettingsMenu"]
+layout_mode = 2
+text = "Volume"
+
+[node name="SliderVolume" type="HSlider" parent="CanvasLayer/MainMenu/SettingsMenu"]
+layout_mode = 2
+min_value = -40.0
+max_value = 0.0
+
+[node name="CheckMute" type="CheckBox" parent="CanvasLayer/MainMenu/SettingsMenu"]
+layout_mode = 2
+button_pressed = true
+text = "Turn On Music"
+
+[node name="BtnBackSettings" type="Button" parent="CanvasLayer/MainMenu/SettingsMenu"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="GameUI" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftArea" type="CenterContainer" parent="CanvasLayer/GameUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PuzzleMarker" type="Control" parent="CanvasLayer/GameUI/LeftArea"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="RightArea" type="VBoxContainer" parent="CanvasLayer/GameUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LabelTargetTitle" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Target Picture"
+
+[node name="TargetImage" type="TextureRect" parent="CanvasLayer/GameUI/RightArea"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelArtDetails" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+text = "Detail Lukisan"
+label_settings = SubResource("LabelSettings_bb2iq")
+
+[node name="LabelBest" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+text = "Best: -"
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+
+[node name="LabelMoves" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+
+[node name="LabelInfo" type="Label" parent="CanvasLayer/GameUI/RightArea"]
+layout_mode = 2
+
+[node name="BtnShuffle" type="Button" parent="CanvasLayer/GameUI/RightArea"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Shuffle"
+
+[node name="BtnBack" type="Button" parent="CanvasLayer/GameUI/RightArea"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6y7pd")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="SfxGeser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mgc0q")
+
+[node name="SfxMenang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bb2iq")
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_18r40")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/GameUI/RightArea/BtnShuffle" to="." method="_on_button_pressed"]
